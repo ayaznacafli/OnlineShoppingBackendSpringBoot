@@ -1,0 +1,142 @@
+package com.ayaz.onlineshopping.model;
+
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
+
+@Entity
+public class Address implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @NotBlank(message = "Pleace enter address line one!")
+    @Column(name = "address_line_one")
+    private String addressLineOne;
+
+    @NotBlank(message = "Pleace enter address line two!")
+    @Column(name = "address_line_two")
+    private String addressLineTwo;
+
+    @NotBlank(message = "Pleace enter city!")
+    @Column(name = "city")
+    private String city;
+
+    @NotBlank(message = "pleace enter state!")
+    private String state;
+
+    @NotBlank(message = "Pleace enter country")
+    @Column(name = "country")
+    private String country;
+
+    @Column(name ="postal_code")
+    @NotBlank(message = "Please enter Postal Code!")
+    private String postalCode;
+
+    @Column(name="is_shipping")
+    private boolean shipping;
+
+    @Column(name="is_billing")
+    private boolean billing;
+
+    @Column(name = "user_id")
+    private int userId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAddressLineOne() {
+        return addressLineOne;
+    }
+
+    public void setAddressLineOne(String addressLineOne) {
+        this.addressLineOne = addressLineOne;
+    }
+
+    public String getAddressLineTwo() {
+        return addressLineTwo;
+    }
+
+    public void setAddressLineTwo(String addressLineTwo) {
+        this.addressLineTwo = addressLineTwo;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public boolean isShipping() {
+        return shipping;
+    }
+
+    public void setShipping(boolean shipping) {
+        this.shipping = shipping;
+    }
+
+    public boolean isBilling() {
+        return billing;
+    }
+
+    public void setBilling(boolean billing) {
+        this.billing = billing;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", addressLineOne='" + addressLineOne + '\'' +
+                ", addressLineTwo='" + addressLineTwo + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", shipping=" + shipping +
+                ", billing=" + billing +
+                ", userId=" + userId +
+                '}';
+    }
+}
